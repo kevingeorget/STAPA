@@ -1,0 +1,24 @@
+em {
+    color: red;
+}
+
+.formPart {
+    height: 320px;
+    width: 700px;
+    margin: auto;
+}
+
+.formPart select {
+    width: 169px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+label {
+    padding: 3px;
+}
+
+input[type="submit"] {
+    margin-top : 15px;
+}

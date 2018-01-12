@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="http://localhost/ProjetStapa/vue/images/logo50px.png">
+
+    <title>Titre PHP</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
+    <link href="./css/clear.css" rel="stylesheet">   
+    <link href="./css/accueil.css" rel="stylesheet">
+    <link href="./css/gestionClient.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#tabs" ).tabs();
+        } );
+     </script>
+
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div class="titreHeader">
+                <img src="http://localhost/ProjetStapa/vue/images/logo50px.svg" alt="" title="">
+            </div>
+
+            <div id="headerTitle" class="titreHeader">
+                <a href="#">PROJET STAPA</a>
+            </div>
+
+            <div class="titreHeader">
+                <nav>   
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="titreHeader">
+                <img id="imgLogin" src="http://localhost/ProjetStapa/vue/images/login.svg" alt="" title="">
+            </div>
+
+        </header>
+
+        <div id="container2">
+            <div  id="navLeft">  
+                <nav>
+                    <ul>
+                        <li class="navIntermediaire"><a href="">Affichage requête</a></li>
+                        <li class="navIntermediaire">Gestion client</a></li>
+                            <ul>
+                                <li class="sousNav"><a href="">Afficher un client</a></li>
+                                <li class="sousNav"><a href="">Modifier un client</a></li>
+                                <li class="sousNav"><a href="">Supprimer un client</a></li>
+                            </ul>
+                        <li class="navIntermediaire">Gestion utilisateur</li>
+                            <ul>
+                                <li class="sousNav"><a href="">Afficher un utilisateur</a></li>
+                                <li class="sousNav"><a href="">Modifier un utilisateur</a></li>
+                                <li class="sousNav"><a href="">Supprimer un utilisateur</a></li>
+                            </ul>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="content">
+                <h1>Gestion Client</h1>
+                <div class="formPart">
+                        <h2><?= $h2Title ?></h2>
+
+                        <form method="post" action="<?= $actionForm ?>">
+                        
+                            <fieldset>
+                                <legend>Titre PHP </legend>
+                                <div id="tabs">
+                                    <ul id="listTab">
+                                        <li><a href="#tabs-1">Identité</a></li>
+                                        <li><a href="#tabs-2">Coordonnées</a></li>
+                                        <li><a href="#tabs-3">Adresse</a></li>
+                                        <li><a href="#tabs-4">Abonnement</a></li>
+                                        <li><a href="#tabs-5">Scolaire</a></li>
+                                        <li><a href="#tabs-6">Informations financières</a></li>
+                                    </ul>
+                                    
+                                    <p id="asterix">Les champs marqués par une  <em>*</em> sont <em>obligatoires</em></p>
+                                    <div id="tabsIndividuel">
+                                        <div id="tabs-1">
+                                            <p>
+                                                <label for="userId">ID<em>*</em></label>
+                                                <input id="userID" placeholder="autoincrémenté" autofocus="" required=""><br>
+                                                
+                                                <label for="userName">Nom<em>*</em></label>
+                                                <input id="userName" placeholder="Durand"required=""><br>
+                                                
+                                                <label for="userFirstName">Prénom<em>*</em></label>
+                                                <input id="userFirstName" placeholder="Pierre" required=""><br>
+                                                
+                                                <label for="birthDate">Date de naissance<em>*</em></label>
+                                                <input id="birthDate" type="date" placeholder="" required=""><br>
+                            
+                                                <label for="legalparent">Représentant légal</label>
+                                                <input id="legalparent" placeholder="Mme Durant">
+                                            </p>
+                                        </div>
+                                            
+                                        <div id="tabs-2">
+                                            <p>
+                                                <label for="email">Email</label>
+                                                <input id="email" placeholder="jdurand@wanadoo.fr" ><br>
+                                                
+                                                <label for="personalFixe">N° fixe personnel</label>
+                                                <input id="personalFixe" placeholder="0505050505" type="number"><br>
+                            
+                                                <label for="profesionalFixe">N° fixe professionnel</label>
+                                                <input id="profesionalFixe" placeholder="0504040404" type="number"><br>
+                            
+                                                <label for="personalMobile">N° mobile personnel <em>*</em></label>
+                                                <input id="personalMobile" placeholder="0606060606" type="number"><br>
+                            
+                                                <label for="profesionalMobile">N° mobile professionnel</label>
+                                                <input id="profesionalMobile" placeholder="0707070707" type="number">
+                                            </p>
+                                        </div>
+                                        
+                                        <div id="tabs-3">
+                                            <p>
+                                                <label for="streetNumber">N° rue<em>*</em></label>
+                                                <input id="streetNumber" placeholder="1"  required=""><br>
+                            
+                                                <label for="street">Rue<em>*</em></label>
+                                                <input id="street" placeholder="rue du Général de Gaulle"  required=""><br>
+                            
+                                                <label for="residence">Résidence</label>
+                                                <input id="residence" placeholder="Résidence Mimoza" ><br>
+                            
+                                                <label for="building">Batiment</label>
+                                                <input id="building" placeholder="Batiment 4" ><br>
+                            
+                                                <label for="zip">Code Postale<em>*</em></label>
+                                                <input id="zip" placeholder="33000"  required=""><br>
+                            
+                                                <label for="city">Ville<em>*</em></label>
+                                                <input id="city" placeholder="Bordeaux"  required=""><br>
+                                            </p>
+                                        </div>
+                                        
+                                        <div id="tabs-4">
+                                            <p>                                
+                                                <label for="streetNumber">Photo<em>*</em></label>
+                                                <input id="streetNumber" placeholder="1"  required=""><br>
+                            
+                                                <label for="street">Commentaire<em>*</em></label>
+                                                <input id="street" placeholder="rue du Général de Gaulle"  required=""><br>
+                            
+                                                <label for="residence">Date de début</label>
+                                                <input id="residence" placeholder="Résidence Mimoza" ><br>
+                            
+                                                <label for="building">Date fin validité</label>
+                                                <input id="building" placeholder="Batiment 4" ><br>
+                            
+                                                <label for="zip">Type d'abonnement<em>*</em></label>
+                                                <input id="zip" placeholder="33000"  required=""><br>
+                            
+                                                <label for="city">Durée<em>*</em></label>
+                                                <input id="city" placeholder="Bordeaux"  required="">
+                                            </p>            
+                                        </div>
+                            
+                                        <div id="tabs-5">
+                                            <p>
+                                                <label for="streetNumber">Etablissement</label>
+                                                <input id="streetNumber" placeholder="1"  ><br>
+                            
+                                                <label for="street">Ligne</label>
+                                                <input id="street" placeholder="rue du Général de Gaulle"  required=""><br>
+                            
+                                                <label for="residence">Arrêt montée</label>
+                                                <input id="residence" placeholder="Résidence Mimoza" ><br>
+                            
+                                                <label for="residence">Arrêt descente</label>
+                                                <input id="residence" placeholder="Résidence Mimoza" >
+                                            </p> 
+                                        </div>
+                                        
+                                        <div id="tabs-6">
+                                            <p>                               
+                                                <label for="streetNumber">Date de paiement</label>
+                                                <input id="streetNumber" placeholder="1"  ><br>
+                            
+                                                <label for="street">Type de règlement</label>
+                                                <input id="street" placeholder="rue du Général de Gaulle"  required=""><br>
+                            
+                                                <label for="residence">Tarif</label>
+                                                <input id="residence" placeholder="Résidence Mimoza" >
+                                            </p>    
+                                        </div>
+                                    </div>
+                                 
+                                    <div>
+                                    <input type="submit" value="<?=$inputBtn?>">
+                                    </div>
+                                </div> 
+                            </fieldset>
+                               
+                        </form>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <p>Mentions Légales</p>    
+            </div>
+
+            <div class="footer">
+                <p>Plan</p>
+            </div>
+
+            <div class="footer">
+                <p>Widget<br /> Réseaux sociaux</p>
+            </div>
+
+            <div class="footer">
+                <p>Copyright</p>
+            </div>
+
+        </footer>
+    </div>
+</body>
+</html>

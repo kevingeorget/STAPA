@@ -1,0 +1,67 @@
+.formPart {
+    width: 770px;
+    height: 550px;
+}
+
+#tabs {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    margin-bottom: 10px;
+    border: none;   
+}
+
+#asterix {
+    height: 10px;
+    margin: 0;
+    padding: 0;
+    border: 1px black solid;
+}
+
+#tabsIndividuel {
+    min-height:300px;
+    border: 1px solid black;
+}
+
+fieldset {
+    height: 350px;
+}
+
+#listTab {
+    font-size: 0.8em;
+    background-color: white;
+    border: none;
+}
+
+#listTab li a {
+    border: 1px solid black;
+    padding: 15px;
+}
+   
+legend {
+    padding: 0px 3px;
+    font-weight: bold;
+    font-variant: small-caps;
+  }
+   
+.formPart label {
+    text-align: left;
+    font-size: 0.9em;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 3px;
+  }
+
+  
+  input {
+    margin-top: 5px;
+    width: 200px;
+  }
+  
+  em {
+    font-weight: bold;
+    font-style: normal;
+    color: #f00;
+}
+
