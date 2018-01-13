@@ -1,5 +1,20 @@
 <?php
 
+$userLogin_Password = "
+SELECT * FROM `utilisateur`
+  WHERE login='$username'
+  AND password_utilisateur='$password'";
+
+$userTypeID = "SELECT `utilisateur`.`id_type_utilisateur` FROM `utilisateur` WHERE login='$username' AND password_utilisateur='$password'";
+
+
+
+
+
+
+
+
+
 $requete1 = "SELECT `personnes`.`nom`, `personnes`.`prenom`, `personnes`.`naissance`, `personnes`.`email`,
 `telephone`.`num_telephone`, `adresse`.`num_rue`, `adresse`.`rue`, `ville_cp`.`code_post`, `ville_cp`.`nom_commune`
     FROM `ville_cp`
