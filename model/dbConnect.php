@@ -1,6 +1,6 @@
 <?php
 
-require_once ($_SERVER['DOCUMENT_ROOT']."/ProjetStapa/model/configAccessDb.php");
+require_once ('configAccessDb.php');
 
 // Nouvelle fonction qui nous permet d'éviter de répéter du code
 function dbConnect()

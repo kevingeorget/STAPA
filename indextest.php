@@ -1,6 +1,6 @@
 <?php
 
-//require($_SERVER['DOCUMENT_ROOT']."/ProjetStapa/controller/application.php");
+/*require($_SERVER['DOCUMENT_ROOT']."/ProjetStapa/controller/application.php");
 
 $url = ''; // initialisation d'une variable URL
 
@@ -10,7 +10,7 @@ if(isset($_GET['url'])) {
 }
 
 var_dump($_GET);
-var_dump($url);
+var_dump($url);*/
 
 switch ($url[0])
 {
@@ -37,7 +37,7 @@ switch ($url[0])
             echo  "chargement du fichier : accueil opérateur";
             break; }
     break;
-    
+
     case("requete"):
         if ($url[1] <> "") {
             echo "chargement de la requête : ".$url[1];
