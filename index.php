@@ -1,10 +1,9 @@
 <?php
+session_start();
 
 if (!isset($_GET['action'])) {
-    $navLeft['unlogged'] = '';
-    $_SESSION['user_type'] = 'unlogged';
-    $_SESSION['logged'] = false;
-    require('view/logView.php');
+    echo 'bravo';
+    require('controler/homeManager.php');
 } else {
     switch($_GET['action']) {
         case 'log':

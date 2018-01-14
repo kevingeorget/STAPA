@@ -1,7 +1,6 @@
 <?php
 
 /* A commenter... */
-session_start();
 require('model/model.php');
 
 
