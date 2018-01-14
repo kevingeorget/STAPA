@@ -17,7 +17,7 @@ function getLogResult($login, $password)
         return array(
             'number_of_lines' => $numberOfLines,
             'user_id_type' => $userIdType,
-            'user_firstname' => $result['prenom_utilisateur'],
+            'user_first_name' => $result['prenom_utilisateur'],
             'user_name' => $result['nom_utilisateur']
         );
     } catch(Exception $e) {

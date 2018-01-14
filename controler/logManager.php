@@ -22,8 +22,11 @@ if (isset($_POST['submit'])) {
             echo 'Erreur dans la base de données, contactez votre support informatique';
 
         } else {
-            // Ici on affiche le template en fonction du type user
+
             $_SESSION['logged'] = true;
+            $_SESSION['user_first_name'] = $logResult['user_first_name'];
+            $_SESSION['user_name'] = $logResult['user_name'];
+            $_SESSION['content'] = '';
 
             switch ($logResult['user_id_type']) {
                 case 1 : $_SESSION['user_type'] = 'user';
