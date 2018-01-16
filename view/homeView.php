@@ -1,7 +1,8 @@
 
 <?php
-
- ob_start() ?>
+$_SESSION['unknown'] = '';
+$title = 'STAPA, Identification';
+ob_start() ?>
 <section>
         <h1>Bienvenue dans l'outil STAPA</h1>
         <p>
@@ -26,8 +27,7 @@
             </div>
         </form>
 </section>
-<?php // $content['home'] = ob_get_clean();
-    $navLeft['unlogged'] = '';
-    $_SESSION['content'] = ob_get_clean();
-    require('accueil.php');
-//echo $template['left_nav']; ?>
+<?php
+$content = ob_get_clean();
+require('template.php');
+ ?>
