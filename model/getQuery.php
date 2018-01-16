@@ -1,7 +1,7 @@
 <?php
 
-require_once('configAccessDb.php');
-require_once('dbConnect.php');
+require_once('model/configAccessDb.php');
+require_once('model/dbConnect.php');
 
 function getQuery($queryNumber)
 {

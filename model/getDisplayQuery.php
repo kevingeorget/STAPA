@@ -1,8 +1,8 @@
 <?php
 
-require_once('configAccessDb.php');
-require_once('dbConnect.php');
-require_once('getQuery.php');
+require_once('model/configAccessDb.php');
+require_once('model/dbConnect.php');
+require_once('model/getQuery.php');
 
 function getDisplayQuery($queryNumber)
 {
@@ -12,7 +12,7 @@ function getDisplayQuery($queryNumber)
     try {
         $queryResults = $db->prepare($query);
         $queryResults->execute();
-        $result = $queryResults->fetch();
+        $result = $queryResults->fetchAll();
         $queryResults->closeCursor();
         return $result;
 

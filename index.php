@@ -26,10 +26,10 @@ if (!isset($_GET['action'])) {
             require('controller/displayQueryManager.php');
             break;
         case 'manage_customers':
-            require('controller/manageCustomersManager.php');
+            require('controller/manageCustomersFormManager.php');
             break;
         case 'admin_users':
-            require('controller/adminUsersManager.php');
+            require('controller/adminUsersFormManager.php');
             break;
         case 'logout':
             $_SESSION['logged'] = false;
@@ -37,7 +37,7 @@ if (!isset($_GET['action'])) {
             require('controller/homeManager.php');
             break;
         default:
-            require('errorView.php');
+            require('view/errorView.php');
             break;
     }
 }

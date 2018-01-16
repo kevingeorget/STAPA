@@ -1,7 +1,7 @@
 <?php
 
 if ($_SESSION['logged'] == true) {
-    require('view/manageCustomersFormView.php');
+    require('view/adminUsersFormView.php');
 } else {
     require('view/homeView.php');
 }

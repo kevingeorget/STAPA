@@ -3,7 +3,7 @@
 $_SESSION['unknown'] = '';
 $title = 'STAPA, Identification';
 ob_start() ?>
-<section>
+<section id="home_view">
         <h1>Bienvenue dans l'outil STAPA</h1>
         <p>
             Pour accéder à votre outil de gestion des données clients
