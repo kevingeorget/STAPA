@@ -22,7 +22,7 @@ function getLogResult($login, $password)
             'user_name' => $result['nom_utilisateur']
         );
     } catch(Exception $e) {
-        echo "<br />Erreur dans la requete :".$sql."<br /><pre>";
-        echo "</pre><br />".$e->getMessage();
+        echo "<br />Erreur dans la requete<br />";
+        echo $e->getMessage();
     }
 }

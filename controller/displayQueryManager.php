@@ -7,7 +7,11 @@ require('model/getDisplayQuery.php');
 if ($_SESSION['logged'] == true) {
 
     $result = getDisplayQuery(array($_POST['query']));  // numero de la requete en param
-    require('view/displayQueryView.php');
+    if (isset($result) AND $result != null) {
+        require('view/displayQueryView.php');
+    } else {
+        echo 'pas de réééééééésultat';
+    }
 
 } else {
     require('view/homeView.php');

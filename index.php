@@ -2,17 +2,25 @@
 session_start();
 //if ($_SESSION['logged'])
 
+// TEST
+if (isset($_GET['action'])) {
+    echo 'ACTION='.$_GET['action'];
+} else {
+    echo 'pas action';
+}
+echo '<br />USERTYPE='.$_SESSION['user_type'];
+echo '<br />LOGGED='.$_SESSION['logged'];
+
+
+
 if (!isset($_GET['action'])) {
-    $_SESSION['user_type'] = 'unknown';
     require('controller/homeManager.php');
 } else {
-    echo $_GET['action'];
     switch($_GET['action']) {
         case 'home':
             require('controller/homeManager.php');
             break;
         case 'log':
-            echo $_SESSION['logged'];
             if ($_SESSION['logged'] != true) {
                 require('controller/logManager.php');
             } else {

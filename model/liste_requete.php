@@ -1,8 +1,12 @@
 <?php
+SELECT COLUMN_NAME
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME='NomDeLaTable'
+
 
 $requete1 = "SELECT `personnes`.`nom`, `personnes`.`prenom`, `personnes`.`naissance`, `personnes`.`email`,
 `telephone`.`num_telephone`, `adresse`.`num_rue`, `adresse`.`rue`, `ville_cp`.`code_post`, `ville_cp`.`nom_commune`
-    FROM `ville_cp`
+    FROM `ville_cp`,
     LEFT JOIN `adresse` ON `adresse`.`id_ville` = `ville_cp`.`id_ville`
     LEFT JOIN `habite` ON `habite`.`id_adresse` = `adresse`.`id_adresse`
     LEFT JOIN `personnes` ON `habite`.`id_personne` = `personnes`.`id_personne`
@@ -16,8 +20,8 @@ $requete1 = "SELECT `personnes`.`nom`, `personnes`.`prenom`, `personnes`.`naissa
 $requete2 = 'SELECT `personnes`.*, `carte_abonnement`.*, `personnes`.`naissance`
     FROM `personnes`
     LEFT JOIN `carte_abonnement` ON `carte_abonnement`.`id_personne` = `personnes`.`id_personne`
-    WHERE `carte_abonnement`.`date_fin_validite` > "2017-12-21" 
-    AND `personnes`.`naissance` < "2000-01-01"';
+    WHERE `carte_abonnement`.`date_fin_validite` > "2017-12-21"
+    AND `personnes`.`naissance` > "2000-01-01"';
 
 
 $requete3 = "SELECT `personnes`.`nom`, `personnes`.`prenom`, `carte_abonnement`.`date_fin_validite`
@@ -273,7 +277,7 @@ WHERE personnes.id_personne = @id_personne";
 
 
 $requete16 = 'SELECT `personnes`.`nom`, `personnes`.`prenom`, `resilie`.`date_resiliation`
-    FROM `personnes` 
+    FROM `personnes`
     LEFT JOIN `resilie` ON `resilie`.`id_personne` = `personnes`.`id_personne`
     WHERE (`resilie`.`date_resiliation` > "2016-01-01")
     ORDER BY `personnes`.`nom`

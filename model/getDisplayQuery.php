@@ -12,12 +12,12 @@ function getDisplayQuery($queryNumber)
     try {
         $queryResults = $db->prepare($query);
         $queryResults->execute();
-        $result = $queryResults->fetchAll();
+        $result = $queryResults->fetchAll(PDO::FETCH_ASSOC);  // ---> permet de retourner un tableau assoc.
         $queryResults->closeCursor();
         return $result;
 
     } catch(Exception $e) {
-        echo "<br />Erreur dans la requete :".$sql."<br /><pre>";
-        echo "</pre><br />".$e->getMessage();
+        echo "<br />Erreur dans la requete<br />";
+        echo $e->getMessage();
     }
 }
