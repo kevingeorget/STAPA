@@ -10,7 +10,7 @@ if (isset($_GET['action'])) {
 }
 echo '<br />USERTYPE='.$_SESSION['user_type'];
 echo '<br />LOGGED='.$_SESSION['logged'];
-
+// FIN TEST
 
 
 if (!isset($_GET['action'])) {

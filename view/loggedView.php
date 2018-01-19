@@ -5,11 +5,11 @@ $title = 'Bienvenue';
 ob_start(); ?>
 <nav>
     <ul>
-        <li class="navIntermediaire"><a href="index.php?action=display_queries">Affichage requête</a></li>
+        <li><a href="index.php?action=display_queries">Affichage requête</a></li>
         <?php $_SESSION['user'] = ob_get_contents() . '</ul></nav>'; ?>
-        <a href="index.php?action=manage_customers"><li class="navIntermediaire">Gestion clients</li></a>
+        <li><a href="index.php?action=manage_customers">Gestion clients</a></li>
         <?php $_SESSION['operator'] = ob_get_contents() . '</ul></nav>'; ?>
-        <a href="index.php?action=admin_users"><li class="navIntermediaire">Gestion utilisateur</li></a>
+        <li><a href="index.php?action=admin_users">Gestion utilisateur</a></li>
     </ul>
 </nav>
 <?php $_SESSION['administrator'] = ob_get_clean(); ?>

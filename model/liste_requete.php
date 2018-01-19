@@ -4,15 +4,16 @@ FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME='NomDeLaTable'
 
 
-$requete1 = "SELECT `personnes`.`nom`, `personnes`.`prenom`, `personnes`.`naissance`, `personnes`.`email`,
-`telephone`.`num_telephone`, `adresse`.`num_rue`, `adresse`.`rue`, `ville_cp`.`code_post`, `ville_cp`.`nom_commune`
-    FROM `ville_cp`,
+$requete1 = "SELECT `personnes`.`id_personne` AS 'ID Abonné', `personnes`.`nom` AS 'Nom', `personnes`.`prenom` AS 'Prénom', `personnes`.`naissance` AS 'Date de Naissance', `personnes`.`email` AS 'Adresse email',
+`telephone`.`num_telephone` AS 'Téléphone', CONCAT(`adresse`.`num_rue`, ' ', `adresse`.`rue`, ' ', `ville_cp`.`code_post`, ' ', `ville_cp`.`nom_commune`) AS 'Adresse'
+    FROM `ville_cp`
     LEFT JOIN `adresse` ON `adresse`.`id_ville` = `ville_cp`.`id_ville`
     LEFT JOIN `habite` ON `habite`.`id_adresse` = `adresse`.`id_adresse`
     LEFT JOIN `personnes` ON `habite`.`id_personne` = `personnes`.`id_personne`
     LEFT JOIN `joindre` ON `joindre`.`id_personne` = `personnes`.`id_personne`
     LEFT JOIN `telephone` ON `joindre`.`id_tel` = `telephone`.`id_tel`
     WHERE (`personnes`.`nom` <> '')
+    GROUP BY`personnes`.`id_personne`
     ORDER BY `personnes`.`nom`
     ASC";
 
