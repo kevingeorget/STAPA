@@ -1,12 +1,10 @@
 <?php
 
-$userLogin_Password = "
-SELECT * FROM `utilisateur`
-  WHERE login='$username'
-  AND password_utilisateur='$password'";
-
-$userTypeID = "SELECT `utilisateur`.`id_type_utilisateur` FROM `utilisateur` WHERE login='$username' AND password_utilisateur='$password'";
-
+$userLogin_Password = (
+    'SELECT * FROM `utilisateur`
+    WHERE `login` = "$username"
+    AND `password_utilisateur` = "$password"'
+);
 
 
 
@@ -15,7 +13,9 @@ $userTypeID = "SELECT `utilisateur`.`id_type_utilisateur` FROM `utilisateur` WHE
 
 
 
-$requete1 = "SELECT `personnes`.`nom`, `personnes`.`prenom`, `personnes`.`naissance`, `personnes`.`email`,
+
+$requete1 = (
+    "SELECT `personnes`.`nom`, `personnes`.`prenom`, `personnes`.`naissance`, `personnes`.`email`,
 `telephone`.`num_telephone`, `adresse`.`num_rue`, `adresse`.`rue`, `ville_cp`.`code_post`, `ville_cp`.`nom_commune`
     FROM `ville_cp`
     LEFT JOIN `adresse` ON `adresse`.`id_ville` = `ville_cp`.`id_ville`
@@ -25,8 +25,8 @@ $requete1 = "SELECT `personnes`.`nom`, `personnes`.`prenom`, `personnes`.`naissa
     LEFT JOIN `telephone` ON `joindre`.`id_tel` = `telephone`.`id_tel`
     WHERE (`personnes`.`nom` <> '')
     ORDER BY `personnes`.`nom`
-    ASC";
-
+    ASC"
+);
 
 $requete2 = 'SELECT `personnes`.*, `carte_abonnement`.*, `personnes`.`naissance`
     FROM `personnes`

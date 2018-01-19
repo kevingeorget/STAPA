@@ -1,0 +1,21 @@
+
+LOGIN :
+
+$_POST[]
+    submit
+    login
+    password
+
+SESSION :
+
+$_SESSION['logged']
+    true
+    false
+$_SESSION['user_id_type']
+    1
+    2
+    3
+$_SESSION['navLeft']
+    1
+    2
+    3

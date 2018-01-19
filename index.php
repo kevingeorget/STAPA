@@ -10,22 +10,24 @@ if(isset($_GET['url'])) {
 }
 
 var_dump($_GET);
-var_dump($url);*/
+var_dump($url);
+var_dump($_SESSION);
+*/
 
 switch ($url[0])
 {
     case(""):
     case("login"):
         if ($url[1] == "connecte") {
-            echo "chargement du fichier : accueillog";
+            echo "chargement du fichier : accueil profil connecte";
             break;
         } else if ($url[1] == "erreur_connexion") {
             echo "chargement du fichier ereur connexion";
             break;
         } else {
-            echo "chargement du fichier : accueil non connecté";
+            require("./controler/homeManager.php");
             break; }
-
+/*
     case("accueilLog"):
         if ($url[1] == "admin") {
             echo "chargement du fichier : accueil administrateur";
@@ -76,7 +78,7 @@ switch ($url[0])
             echo "chargement du fichier : afficher un profil client";
             break;
         }
-
+*/
     default:
         echo "erreur 404";
 }

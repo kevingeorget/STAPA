@@ -1,7 +1,3 @@
-
-<?php
-session_start();
- ob_start() ?>
 <section>
         <h1>Bienvenue dans l'outil STAPA</h1>
         <p>
@@ -26,7 +22,3 @@ session_start();
             </div>
         </form>
 </section>
-<?php // $content['home'] = ob_get_clean();
-    $_SESSION['content'] = ob_get_clean();
-    require('accueil.php');
-//echo $template['left_nav']; ?>
