@@ -10,9 +10,11 @@
  *   jQuery 3 3.2.1, DataTables 1.10.16
  */
 
+ 
 /*
  * Table styles
  */
+
 table.dataTable {
   width: 100%;
   margin: 0 auto;
@@ -458,5 +460,3 @@ table.dataTable td {
     margin-top: 0.5em;
   }
 }
-
-

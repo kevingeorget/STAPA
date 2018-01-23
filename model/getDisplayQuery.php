@@ -1,8 +1,7 @@
 <?php
 
-require_once('model/configAccessDb.php');
-require_once('model/dbConnect.php');
-require_once('model/getQuery.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/projetweb_stapa/STAPA/model/dbConnect.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/projetweb_stapa/STAPA/model/getQuery.php');
 
 function getDisplayQuery($queryNumber)
 {

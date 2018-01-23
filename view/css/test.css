@@ -1,0 +1,39 @@
+form#userModal{
+    display:none;
+    background-color: lightgrey;
+    position: absolute;
+    margin: auto;
+    left: 33%;
+    border-radius: 5px;
+    z-index: 1;
+    height: 400px;
+    width: 650px;
+}
+
+div.contact{
+    display:none;
+    background-color: lightgrey;
+    z-index: 101;
+    top: 0px;
+    height: 100%;
+}
+
+div.subscription{
+    display:none;
+    background-color: lightgrey;
+    z-index: 101;
+    top: 0px;
+    height: 100%
+}
+
+/*display: none;
+background-color: lightgrey;
+position: absolute;
+left: 60%;
+margin: auto;
+border: 3px;
+border-color: black;
+border-radius: 5px;
+z-index: 1;
+height: 250px;
+width: 400px;*/

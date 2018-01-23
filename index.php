@@ -2,7 +2,7 @@
 session_start();
 //if ($_SESSION['logged'])
 
-// TEST
+/* // TEST
 if (isset($_GET['action'])) {
     echo 'ACTION='.$_GET['action'];
 } else {
@@ -10,7 +10,7 @@ if (isset($_GET['action'])) {
 }
 echo '<br />USERTYPE='.$_SESSION['user_type'];
 echo '<br />LOGGED='.$_SESSION['logged'];
-// FIN TEST
+// FIN TEST */
 
 
 if (!isset($_GET['action'])) {
@@ -21,7 +21,7 @@ if (!isset($_GET['action'])) {
             require('controller/homeManager.php');
             break;
         case 'log':
-            if ($_SESSION['logged'] != true) {
+            if (!isset($_SESSION['logged']) OR $_SESSION['logged'] != true) {
                 require('controller/logManager.php');
             } else {
                 require('view/loggedView.php');
